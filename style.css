@@ -1,0 +1,234 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background: linear-gradient(135deg, #fceabb, #f8b500);
+  color: #4b2e83;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #a64ca6;
+  background-image: linear-gradient(315deg, #a64ca6 0%, #d16ba5 74%);
+  padding: 20px 0;
+  box-shadow: 0 2px 10px rgba(166,76,166,0.7);
+}
+
+nav ul.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+nav ul.nav-links li a {
+  color: #fff0f5;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.3rem;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  box-shadow: 0 0 10px rgba(255, 182, 193, 0.7);
+}
+
+nav ul.nav-links li a:hover,
+nav ul.nav-links li a.active {
+  background-color: #fff0f5;
+  color: #a64ca6;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.9);
+}
+
+main#app {
+  flex-grow: 1;
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #fff0f5;
+  border-radius: 25px;
+  box-shadow: 0 12px 30px rgba(166,76,166,0.3);
+  min-height: 600px;
+  position: relative;
+  overflow: hidden;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #4b2e83;
+}
+
+/* Page transition animation */
+.page {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInSlideUp 0.6s forwards;
+}
+
+@keyframes fadeInSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Albums styles */
+.album {
+  margin-bottom: 40px;
+  border-bottom: 2px solid #d16ba5;
+  padding-bottom: 20px;
+}
+
+.album h2 {
+  margin-bottom: 15px;
+  color: #a64ca6;
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.album-description {
+  font-style: italic;
+  margin-bottom: 20px;
+  color: #7a3f7a;
+}
+
+.album-photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.album-photos img {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 4px 15px rgba(166,76,166,0.3);
+}
+
+.album-photos img:hover {
+  transform: scale(1.15) rotate(3deg);
+  box-shadow: 0 8px 25px rgba(255, 105, 180, 0.7);
+}
+
+/* Wishes page */
+.wishes-list {
+  list-style: none;
+  padding-left: 0;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.wishes-list li {
+  background: #f9d5e5;
+  margin-bottom: 18px;
+  padding: 18px 25px;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(255, 105, 180, 0.3);
+  font-size: 1.3rem;
+  color: #7a3f7a;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Mini-game styles */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.cat-image {
+  width: 250px;
+  height: 250px;
+  background-image: url('img/cat.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: drop-shadow(0 0 10px #a64ca6);
+  transition: transform 0.4s ease;
+  border-radius: 50%;
+}
+
+.cat-image.happy {
+  transform: scale(1.2) rotate(-10deg);
+  filter: drop-shadow(0 0 25px #ff69b4);
+}
+
+.food-button {
+  padding: 15px 30px;
+  background-color: #a64ca6;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(166,76,166,0.6);
+  transition: background-color 0.4s ease;
+}
+
+.food-button:hover {
+  background-color: #d16ba5;
+}
+
+/* Photo viewer styles */
+.photo-viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.photo-viewer.hidden {
+  display: none;
+}
+
+.photo-viewer img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(255, 105, 180, 0.8);
+}
+
+.close-viewer {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  font-size: 3rem;
+  color: #ff69b4;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10001;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  nav ul.nav-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .album-photos img {
+    width: 120px;
+    height: 90px;
+  }
+  main#app {
+    margin: 20px;
+    padding: 20px;
+    min-height: 500px;
+  }
+}

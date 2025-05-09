@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Год отношений</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#albums" data-route="albums">Альбомы</a></li>
+        <li><a href="#wishes" data-route="wishes">Пожелания</a></li>
+        <li><a href="#game" data-route="game">Мини-игра</a></li>
+        <li><a href="#fromHeart" data-route="fromHeart">От души</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="app">
+    <!-- Content will be loaded here by JS routing -->
+  </main>
+  <div id="photoViewer" class="photo-viewer hidden">
+    <span id="closeViewer" class="close-viewer">&times;</span>
+    <img id="viewerImage" src="" alt="Фото" />
+  </div>
+  <audio id="background-music" loop autoplay src="./img/song.mp3">
+    
+  </audio>
+  <script src="script.js"></script>
+</body>
+</html>
