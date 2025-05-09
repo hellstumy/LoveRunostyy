@@ -365,6 +365,11 @@ function setupMusic() {
   });
 }
 
+document.addEventListener('click', function once() {
+  setupMusic();
+  document.removeEventListener('click', once); // чтобы не запускать повторно
+});
+
 // Initialize app
 function init() {
   window.addEventListener('hashchange', router);
